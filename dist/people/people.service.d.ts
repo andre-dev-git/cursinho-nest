@@ -4,5 +4,5 @@ export declare class PeopleService {
     list(): Person[];
     findById(id: number): Person;
     save(person: Person): void;
-    update(person: Person): void;
+    update(person: Person): boolean;
 }

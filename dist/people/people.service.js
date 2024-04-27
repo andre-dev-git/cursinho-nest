@@ -151,6 +151,7 @@ let PeopleService = class PeopleService {
         for (const personSearch of this.people) {
             if (personSearch.id == person.id) {
                 personSearch.name = person.name;
+                return true;
             }
         }
     }
