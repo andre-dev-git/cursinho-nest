@@ -26,29 +26,37 @@ let PeopleController = class PeopleController {
     }
     getById(id, response) {
         const person = this.service.findById(id);
-        const [status, msg] = person ? [200, person] : [404, 'Não existe'];
+        const [status, msg] = person ? [200, person] : [404, "Não existe"];
         return response.status(status).send(msg);
     }
     save(person, response) {
         this.service.save(person);
-        return response.status(200).send('Ok');
+        return response.status(200).send("Ok");
     }
     update(person, response) {
-        this.service.update(person);
-        return response.status(200).send('Ok');
+        const [status, msg] = this.service.update(person)
+            ? [200, "Ok"]
+            : [404, "Não existe"];
+        return response.status(status).send(msg);
+    }
+    delete(id, response) {
+        const [status, msg] = this.service.delete(id)
+            ? [200, "Ok"]
+            : [404, "Não existe"];
+        return response.status(status).send(msg);
     }
 };
 exports.PeopleController = PeopleController;
 __decorate([
-    (0, common_1.Get)('/list'),
+    (0, common_1.Get)("/list"),
     __param(0, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], PeopleController.prototype, "list", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Get)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Object]),
@@ -70,8 +78,16 @@ __decorate([
     __metadata("design:paramtypes", [person_1.Person, Object]),
     __metadata("design:returntype", void 0)
 ], PeopleController.prototype, "update", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)("id")),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", void 0)
+], PeopleController.prototype, "delete", null);
 exports.PeopleController = PeopleController = __decorate([
-    (0, common_1.Controller)('people'),
+    (0, common_1.Controller)("people"),
     __metadata("design:paramtypes", [people_service_1.PeopleService])
 ], PeopleController);
 //# sourceMappingURL=people.controller.js.map

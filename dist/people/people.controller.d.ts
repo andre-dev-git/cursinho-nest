@@ -8,4 +8,5 @@ export declare class PeopleController {
     getById(id: number, response: Response): Response<any, Record<string, any>>;
     save(person: Person, response: Response): Response<any, Record<string, any>>;
     update(person: Person, response: Response): Response<any, Record<string, any>>;
+    delete(id: number, response: Response): Response<any, Record<string, any>>;
 }

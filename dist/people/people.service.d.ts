@@ -5,4 +5,5 @@ export declare class PeopleService {
     findById(id: number): Person;
     save(person: Person): void;
     update(person: Person): boolean;
+    delete(personId: number): boolean;
 }

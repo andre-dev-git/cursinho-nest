@@ -13,123 +13,123 @@ let PeopleService = class PeopleService {
         this.people = [
             {
                 id: 10,
-                name: 'Andrezinho do Nest',
+                name: "Andrezinho do Nest",
             },
             {
                 id: 20,
-                name: 'Maria Silva',
+                name: "Maria Silva",
             },
             {
                 id: 30,
-                name: 'João Santos',
+                name: "João Santos",
             },
             {
                 id: 40,
-                name: 'Ana Oliveira',
+                name: "Ana Oliveira",
             },
             {
                 id: 50,
-                name: 'Pedro Pereira',
+                name: "Pedro Pereira",
             },
             {
                 id: 60,
-                name: 'Carla Rodrigues',
+                name: "Carla Rodrigues",
             },
             {
                 id: 70,
-                name: 'Ricardo Fernandes',
+                name: "Ricardo Fernandes",
             },
             {
                 id: 80,
-                name: 'Mariana Costa',
+                name: "Mariana Costa",
             },
             {
                 id: 90,
-                name: 'Luís Gonçalves',
+                name: "Luís Gonçalves",
             },
             {
                 id: 100,
-                name: 'Sofia Martins',
+                name: "Sofia Martins",
             },
             {
                 id: 110,
-                name: 'Eduardo Sousa',
+                name: "Eduardo Sousa",
             },
             {
                 id: 120,
-                name: 'Patrícia Mendes',
+                name: "Patrícia Mendes",
             },
             {
                 id: 130,
-                name: 'Rui Almeida',
+                name: "Rui Almeida",
             },
             {
                 id: 140,
-                name: 'Catarina Ramos',
+                name: "Catarina Ramos",
             },
             {
                 id: 150,
-                name: 'Fernando Costa',
+                name: "Fernando Costa",
             },
             {
                 id: 160,
-                name: 'Lara Pereira',
+                name: "Lara Pereira",
             },
             {
                 id: 170,
-                name: 'Gustavo Oliveira',
+                name: "Gustavo Oliveira",
             },
             {
                 id: 180,
-                name: 'Inês Martins',
+                name: "Inês Martins",
             },
             {
                 id: 190,
-                name: 'Tiago Sousa',
+                name: "Tiago Sousa",
             },
             {
                 id: 200,
-                name: 'Marta Ferreira',
+                name: "Marta Ferreira",
             },
             {
                 id: 210,
-                name: 'Hugo Santos',
+                name: "Hugo Santos",
             },
             {
                 id: 220,
-                name: 'Sara Mendes',
+                name: "Sara Mendes",
             },
             {
                 id: 230,
-                name: 'Carlos Silva',
+                name: "Carlos Silva",
             },
             {
                 id: 240,
-                name: 'Teresa Rodrigues',
+                name: "Teresa Rodrigues",
             },
             {
                 id: 250,
-                name: 'Daniel Pereira',
+                name: "Daniel Pereira",
             },
             {
                 id: 260,
-                name: 'Andreia Costa',
+                name: "Andreia Costa",
             },
             {
                 id: 270,
-                name: 'Bruno Martins',
+                name: "Bruno Martins",
             },
             {
                 id: 280,
-                name: 'Isabel Fernandes',
+                name: "Isabel Fernandes",
             },
             {
                 id: 290,
-                name: 'Paulo Gonçalves',
+                name: "Paulo Gonçalves",
             },
             {
                 id: 300,
-                name: 'Liliana Santos',
+                name: "Liliana Santos",
             },
         ];
     }
@@ -154,6 +154,16 @@ let PeopleService = class PeopleService {
                 return true;
             }
         }
+        return false;
+    }
+    delete(personId) {
+        for (let i = 0; i < this.people.length; i++) {
+            if (this.people[i].id === personId) {
+                this.people.splice(i, 1);
+                return true;
+            }
+        }
+        return false;
     }
 };
 exports.PeopleService = PeopleService;
